@@ -6,6 +6,6 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StandardPlatform
-  friction: 1
-  bounciness: 0.1
+  m_Name: StandardGround
+  friction: 0.9
+  bounciness: 0.4
