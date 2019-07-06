@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: fire_mat
+  m_Shader: {fileID: 4800000, guid: 10a9b3735aed57142b83a4b2b5f37b74, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_364160ED:
+        m_Texture: {fileID: 2800000, guid: 4e8e5907492a5b94db67f16502481745, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_22AE0BAD: 0.1
+    - Vector1_9DC0EFEB: 1.4
+    - Vector1_B6A9E4AF: 4.86
+    - Vector1_FEEF07DB: 9
+    m_Colors:
+    - Color_7F6EE9B8: {r: 766.9961, g: 305.19217, b: 152.59608, a: 0}
+    - Vector2_AAD64890: {r: -0.1, g: -0.5, b: 0, a: 0}
+    - Vector2_F6BA4D6B: {r: 0.22, g: -0.3, b: 0, a: 0}
