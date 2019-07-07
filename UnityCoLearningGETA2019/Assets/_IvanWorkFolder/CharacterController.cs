@@ -37,28 +37,35 @@ public class CharacterController : MonoBehaviour
     public float sizeScaleChange = 1;
     //public float heightChange;
 
+    private AnimationScript animationScript;
+
+
     // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
 
-
+        animationScript = GetComponent<AnimationScript>();
     }
 
+    // Update is called once per frame
     // Update is called once per frame
     void Update()
     {
         //Check if the bottom of the figure overlaps with the ground
         if (Input.GetButtonDown("CheckpointReset") && checkpoint != null)
         {
-            PerformSoftReset();
+            rb.velocity = Vector3.zero;
+            transform.position = checkpoint.transform.position;
+            ResetSize();
+            gameController.PerformCheckpointReset();
             return;
         }
 
         isOnGround = Physics2D.OverlapArea(
-                        new Vector2(transform.position.x - 0.05f * size * sizeScaleChange, transform.position.y + 0.05f * size * sizeScaleChange),
-                        new Vector2(transform.position.x + 0.05f * size * sizeScaleChange, transform.position.y - 0.05f * size * sizeScaleChange),
+                        new Vector2(transform.position.x - 0.25f, transform.position.y + 0.1f),
+                        new Vector2(transform.position.x + 0.25f, transform.position.y - 0.1f),
                     groundLayers);
 
 
@@ -73,24 +80,36 @@ public class CharacterController : MonoBehaviour
                 (horizontalInput - deadzone) / (1f - deadzone) :
                 (horizontalInput + deadzone) / (1f - deadzone);
 
-            force.x =  horizontalInput * (isOnGround ? horizontalGroundForce : horizontalAirForce);
+            force.x = horizontalInput * (isOnGround ? horizontalGroundForce : horizontalAirForce);
+            animationScript.PlayAnimation("Moving");
+            //animationScript.PlayAnimation(2);
+        }
+        else
+        {
+            animationScript.PlayAnimation("Idle");
         }
 
-        
+
 
 
         if (Input.GetButtonDown("Jump"))
         {
-            if (!doJump && (isOnGround || ChangeSize(-1))) {
+            if (!doJump && (isOnGround || ChangeSize(-1)))
+            {
                 impulse.y = jumpImpulse;
                 doJump = true;
+                animationScript.PlayAnimation("Jumping");
+                //animationScript.PlayAnimation(3);
             }
+
+
         }
 
-        if (Input.GetButtonDown("Absorb")) {
+        if (Input.GetButtonDown("Absorb"))
+        {
             if (inRangeOfSandpile && checkpoint != null)
             {
-                while(checkpoint.currentPileSize > 0 && ChangeSize(1))
+                while (checkpoint.currentPileSize > 0 && ChangeSize(1))
                 {
                     checkpoint.DrainPile(1);
                 }
@@ -108,7 +127,11 @@ public class CharacterController : MonoBehaviour
                 }
             }
 
+            animationScript.PlayAnimation("Growing");
+            //animationScript.PlayAnimation(1);
+
         }
+
 
 
     }
