@@ -10,9 +10,9 @@ public class GameController : MonoBehaviour
     private Sandpile[] allSandpiles;
     internal List<EjectedSand> allEjectedSand;
     private List<MovableElement> allMovables;
-    public int completedGoals;
-    private const int allGoals = 1;
-    private Vector2[] goalPositions = new Vector2[] { new Vector2(9f, 6.5f), new Vector2(10f, 6.5f), new Vector2(11f, 6.5f) };
+    internal int completedGoals = 0;
+    public int allGoals = 3;
+    private Vector2[] goalPositions = new Vector2[] { new Vector2(-1f, -3.5f), new Vector2(0f, -3.5f), new Vector2(1f, -3.5f) };
     private void Start()
     {
         allSandpiles = FindObjectsOfType<Sandpile>();
@@ -63,7 +63,8 @@ public class GameController : MonoBehaviour
     public void CompleteGoal(MovableElement element)
     {
         element.transform.position = goalPositions[completedGoals];
-        element.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        element.transform.rotation = Quaternion.identity;
+        element.GetComponent<Rigidbody2D>().Sleep();
 
         allMovables.Remove(element);
         

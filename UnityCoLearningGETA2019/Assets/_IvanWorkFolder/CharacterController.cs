@@ -57,8 +57,10 @@ public class CharacterController : MonoBehaviour
         }
 
         isOnGround = Physics2D.OverlapArea(
-                        new Vector2(transform.position.x - 0.05f * size * sizeScaleChange, transform.position.y + 0.05f * size * sizeScaleChange),
-                        new Vector2(transform.position.x + 0.05f * size * sizeScaleChange, transform.position.y - 0.05f * size * sizeScaleChange),
+                        new Vector2(transform.position.x - 0.05f * size * sizeScaleChange + 0.01f, 
+                                    transform.position.y + 0.05f * size * sizeScaleChange),
+                        new Vector2(transform.position.x + 0.05f * size * sizeScaleChange - 0.01f, 
+                                    transform.position.y - 0.05f * size * sizeScaleChange),
                     groundLayers);
 
 
