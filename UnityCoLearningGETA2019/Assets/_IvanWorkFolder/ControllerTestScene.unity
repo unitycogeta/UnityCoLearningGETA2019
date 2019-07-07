@@ -1196,6 +1196,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0d10d47868a4c42b1fa5e5daff1c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &939138889
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1153570877}
+    m_Modifications:
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881877502415200346, guid: 142e4b25d8cb9b1458bce3add1401a80,
+        type: 3}
+      propertyPath: m_Name
+      value: sandman_object
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 142e4b25d8cb9b1458bce3add1401a80, type: 3}
+--- !u!4 &939138890 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 524706643944432927, guid: 142e4b25d8cb9b1458bce3add1401a80,
+    type: 3}
+  m_PrefabInstance: {fileID: 939138889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &945245012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,13 +1467,14 @@ GameObject:
   - component: {fileID: 1065232224}
   - component: {fileID: 1065232226}
   - component: {fileID: 1065232225}
+  - component: {fileID: 1065232227}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1065232224
 Transform:
   m_ObjectHideFlags: 0
@@ -1443,6 +1534,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065232223}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1065232227
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065232223}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b9e733c06f7f3c40b1cb0e0c8970e88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1109804777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,9 +1622,10 @@ GameObject:
   - component: {fileID: 1153570877}
   - component: {fileID: 1153570876}
   - component: {fileID: 1153570875}
+  - component: {fileID: 1153570878}
   - component: {fileID: 1153570874}
   m_Layer: 0
-  m_Name: Sandman
+  m_Name: AnimatedSandman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1608,9 +1719,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1065232224}
+  - {fileID: 939138890}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153570878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153570873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43058ddc84f0eb44d8f82754a6452e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!1 &1244135933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,7 +1812,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1282078400
@@ -1865,7 +1990,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1394429727
@@ -2271,7 +2396,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1904317172

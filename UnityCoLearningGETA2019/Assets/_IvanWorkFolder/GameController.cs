@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
         {
             allEjectedSand.RemoveRange(0, allEjectedSand.Count - maxEjectedSand);
         }
-        Debug.Log(allEjectedSand.Count);
+        //Debug.Log(allEjectedSand.Count);
         
     }
 

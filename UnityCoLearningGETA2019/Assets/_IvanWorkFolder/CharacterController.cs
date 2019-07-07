@@ -37,13 +37,17 @@ public class CharacterController : MonoBehaviour
     public float sizeScaleChange = 1;
     //public float heightChange;
 
+
+    private AnimationScript animationScript;
+
+
     // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
 
-
+        animationScript = GetComponent<AnimationScript>();
     }
 
     // Update is called once per frame
@@ -77,6 +81,12 @@ public class CharacterController : MonoBehaviour
                 (horizontalInput + deadzone) / (1f - deadzone);
 
             force.x =  horizontalInput * (isOnGround ? horizontalGroundForce : horizontalAirForce);
+            animationScript.PlayAnimation("Moving");
+            //animationScript.PlayAnimation(2);
+        }
+        else
+        {         
+                animationScript.PlayAnimation("Idle");        
         }
 
         
@@ -87,7 +97,11 @@ public class CharacterController : MonoBehaviour
             if (!doJump && (isOnGround || ChangeSize(-1))) {
                 impulse.y = jumpImpulse;
                 doJump = true;
+                animationScript.PlayAnimation("Jumping");
+              //animationScript.PlayAnimation(3);
             }
+
+            
         }
 
         if (Input.GetButtonDown("Absorb")) {
@@ -111,7 +125,11 @@ public class CharacterController : MonoBehaviour
                 }
             }
 
+            animationScript.PlayAnimation("Growing");
+            //animationScript.PlayAnimation(1);
+
         }
+
 
 
     }
