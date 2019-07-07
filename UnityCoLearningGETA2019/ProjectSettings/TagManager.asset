@@ -15,10 +15,10 @@ TagManager:
   - 
   - PostProcessing
   - SolidGround
-  - 
-  - 
-  - 
-  - 
+  - MovableGround
+  - PlayerCreatedSandpile
+  - Player
+  - SandpileTrigger
   - 
   - 
   - 
