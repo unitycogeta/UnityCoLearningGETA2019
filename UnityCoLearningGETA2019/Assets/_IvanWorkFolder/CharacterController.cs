@@ -52,17 +52,14 @@ public class CharacterController : MonoBehaviour
         //Check if the bottom of the figure overlaps with the ground
         if (Input.GetButtonDown("CheckpointReset") && checkpoint != null)
         {
-            rb.velocity = Vector3.zero;
-            transform.position = checkpoint.transform.position;
-            ResetSize();
-            gameController.PerformCheckpointReset();
+            PerformSoftReset();
             return;
         }
 
         isOnGround = Physics2D.OverlapArea(
-                        new Vector2(transform.position.x - 0.25f, transform.position.y + 0.1f),
-                        new Vector2(transform.position.x + 0.25f, transform.position.y - 0.1f),
-                    groundLayers); 
+                        new Vector2(transform.position.x - 0.05f * size * sizeScaleChange, transform.position.y + 0.05f * size * sizeScaleChange),
+                        new Vector2(transform.position.x + 0.05f * size * sizeScaleChange, transform.position.y - 0.05f * size * sizeScaleChange),
+                    groundLayers);
 
 
         var horizontalInput = Input.GetAxis("Horizontal");
@@ -114,6 +111,15 @@ public class CharacterController : MonoBehaviour
         }
 
 
+    }
+
+    public void PerformSoftReset()
+    {
+        rb.velocity = Vector3.zero;
+        transform.position = checkpoint.transform.position;
+        ResetSize();
+        gameController.PerformCheckpointReset();
+        return;
     }
 
     private void FixedUpdate()

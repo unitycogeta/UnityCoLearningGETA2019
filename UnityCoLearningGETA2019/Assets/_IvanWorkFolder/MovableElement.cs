@@ -28,6 +28,7 @@ public class MovableElement : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0;
         }
+        gameObject.SetActive(true);
     }
 
 }

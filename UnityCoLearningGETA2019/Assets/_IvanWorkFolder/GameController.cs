@@ -31,7 +31,10 @@ public class GameController : MonoBehaviour
 
         if(allEjectedSand.Count > maxEjectedSand)
         {
-            allEjectedSand.RemoveRange(0, allEjectedSand.Count - maxEjectedSand);
+            var excessSand = allEjectedSand[0];
+
+            allEjectedSand.Remove(excessSand);
+            excessSand.Absorb();
         }
         Debug.Log(allEjectedSand.Count);
         
