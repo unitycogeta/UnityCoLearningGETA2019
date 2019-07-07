@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,12 +9,14 @@ public class GameController : MonoBehaviour
     public int maxEjectedSand = 10;
     private Sandpile[] allSandpiles;
     internal List<EjectedSand> allEjectedSand;
-    private MovableElement[] allMovables;
-
+    private List<MovableElement> allMovables;
+    public int completedGoals;
+    private const int allGoals = 1;
+    private Vector2[] goalPositions = new Vector2[] { new Vector2(9f, 6.5f), new Vector2(10f, 6.5f), new Vector2(11f, 6.5f) };
     private void Start()
     {
         allSandpiles = FindObjectsOfType<Sandpile>();
-        allMovables = FindObjectsOfType<MovableElement>();
+        allMovables = FindObjectsOfType<MovableElement>().ToList();
         allEjectedSand = new List<EjectedSand>();
     }
 
@@ -57,4 +60,17 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void CompleteGoal(MovableElement element)
+    {
+        element.transform.position = goalPositions[completedGoals];
+        element.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
+        allMovables.Remove(element);
+        
+        completedGoals++;
+        if(completedGoals == allGoals)
+        {
+            Debug.Log("You won");
+        }
+    }
 }
