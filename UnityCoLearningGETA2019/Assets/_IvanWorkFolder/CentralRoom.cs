@@ -8,9 +8,9 @@ public class CentralRoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
-        Debug.Log(collision.gameObject.name);
-        Debug.Log(collision.gameObject.GetComponent<MovableElement>());
+        //Debug.Log(collision.name);
+        //Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.GetComponent<MovableElement>());
         if (collision.gameObject.tag == "Finish")
         {
             var movable = collision.gameObject.GetComponent<MovableElement>();

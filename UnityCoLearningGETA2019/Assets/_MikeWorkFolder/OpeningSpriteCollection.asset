@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07933396f5363b40bbcf1b248713ed4, type: 3}
+  m_Name: OpeningSpriteCollection
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: f9a7a89d5eb8c8347b2b9c7957349f83, type: 3}
+  - {fileID: 21300000, guid: 75048f612e0fa4f4fac249d552889b66, type: 3}
+  - {fileID: 21300000, guid: c8be17a1db06c8d439db0c282081bad8, type: 3}
+  - {fileID: 21300000, guid: 9674b443af3497f48b488c3a3ea29e14, type: 3}
+  - {fileID: 21300000, guid: d8a241c1afb9d3146af746f44fd570be, type: 3}
+  - {fileID: 21300000, guid: ae3c306f72a05f34b83e4dcab9cfe964, type: 3}
+  - {fileID: 21300000, guid: e5996135ef5a94948a6b8960c86ea871, type: 3}
+  - {fileID: 21300000, guid: 95447b976035b394b8bda6ab02372579, type: 3}
+  - {fileID: 21300000, guid: 33576041dd4cef64fa127b1c53a7ea3d, type: 3}

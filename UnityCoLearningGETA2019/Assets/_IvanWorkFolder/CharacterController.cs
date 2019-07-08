@@ -34,7 +34,9 @@ public class CharacterController : MonoBehaviour
     public int maxSize = 5;
 
     public float massChange = 1;
-    public float sizeScaleChange = 1;
+
+    [SerializeField]
+    public float sizeScaleChange = 0.5f;
     //public float heightChange;
 
     // Start is called before the first frame update
