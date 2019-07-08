@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartGame : MonoBehaviour
+public class EndGame : MonoBehaviour
 {
-    public SceneLoader sceneLoader;
     public Image buttonImage;
     public float pulseSpeed;
 
@@ -16,7 +15,7 @@ public class StartGame : MonoBehaviour
         if (!startingLevel)
         {
             var color = buttonImage.color;
-            color.a = 0.25f * (1.5f + Mathf.Sin(Time.time * pulseSpeed));
+            color.a = 0.25f * (2 + Mathf.Sin(Time.time * pulseSpeed));
             buttonImage.color = color;
         }
     }
@@ -36,6 +35,6 @@ public class StartGame : MonoBehaviour
             buttonImage.color = color;
             yield return null;
         }
-        sceneLoader.LoadSCene();
+        Application.Quit();
     }
 }
