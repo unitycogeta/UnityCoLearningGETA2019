@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: OpeningSpriteCollection
   m_EditorClassIdentifier: 
   sprites:
+  - {fileID: 21300000, guid: 11f70a1092d3f9948b5c7fd132c81b78, type: 3}
   - {fileID: 21300000, guid: f9a7a89d5eb8c8347b2b9c7957349f83, type: 3}
   - {fileID: 21300000, guid: 75048f612e0fa4f4fac249d552889b66, type: 3}
   - {fileID: 21300000, guid: c8be17a1db06c8d439db0c282081bad8, type: 3}
