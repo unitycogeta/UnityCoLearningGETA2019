@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     public int allGoals = 3;
     private Vector3[] goalPositions = new Vector3[] { new Vector3(-0f, -4f,1), new Vector3(-1f, -4f, 1f), new Vector3(2f, -4f, 1) };
     private SceneLoader sceneLoader;
+    public GameObject FixedSandPrefab;
+    public Vector3[] fixedSandPositions;
 
     private void Start()
     {
@@ -21,6 +23,8 @@ public class GameController : MonoBehaviour
         allMovables = FindObjectsOfType<MovableElement>().ToList();
         allEjectedSand = new List<EjectedSand>();
         sceneLoader = GetComponent<SceneLoader>();
+        maxEjectedSand += fixedSandPositions.Count();
+        SpawnFixedSand();
     }
 
     private void Update()
@@ -61,6 +65,7 @@ public class GameController : MonoBehaviour
         {
             movable.ResetToInitial();
         }
+        SpawnFixedSand();
     }
 
     public void CompleteGoal(MovableElement element)
@@ -83,5 +88,15 @@ public class GameController : MonoBehaviour
     {
         sceneLoader.LoadSCene();
 
+    }
+
+    private void SpawnFixedSand()
+    {
+        foreach(var position in fixedSandPositions)
+        {
+            var sand = Instantiate(FixedSandPrefab, position, Quaternion.identity);
+            
+            allEjectedSand.Add(sand.GetComponent<EjectedSand>());
+        }
     }
 }

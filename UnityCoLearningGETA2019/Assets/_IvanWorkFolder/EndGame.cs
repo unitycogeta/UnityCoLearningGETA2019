@@ -15,7 +15,7 @@ public class EndGame : MonoBehaviour
         if (!startingLevel)
         {
             var color = buttonImage.color;
-            color.a = 0.25f * (2 + Mathf.Sin(Time.time * pulseSpeed));
+            color.a = 0.25f * (2 - Mathf.Cos(Time.time * pulseSpeed));
             buttonImage.color = color;
         }
     }
