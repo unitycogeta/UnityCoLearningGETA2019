@@ -420,11 +420,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5309835667434689280}
     m_Modifications:
-    - target: {fileID: 7064638347595129800, guid: 10e33088b239e9e46931529779c0440d,
-        type: 3}
-      propertyPath: m_Name
-      value: seesaw_block_1
-      objectReference: {fileID: 0}
     - target: {fileID: 6075913338050859483, guid: 10e33088b239e9e46931529779c0440d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -488,12 +483,17 @@ PrefabInstance:
     - target: {fileID: 6075913338050859483, guid: 10e33088b239e9e46931529779c0440d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6075913338050859483, guid: 10e33088b239e9e46931529779c0440d,
         type: 3}
       propertyPath: m_LocalScale.z
       value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064638347595129800, guid: 10e33088b239e9e46931529779c0440d,
+        type: 3}
+      propertyPath: m_Name
+      value: seesaw_block_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10e33088b239e9e46931529779c0440d, type: 3}
