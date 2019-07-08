@@ -62,11 +62,11 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 7.77
   threshold:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0.7
   softKnee:
     overrideState: 0
     value: 0.5
@@ -165,8 +165,8 @@ MonoBehaviour:
     value: {fileID: 0}
     defaultState: 1
   tonemapper:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 2
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -199,8 +199,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   colorFilter:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    overrideState: 1
+    value: {r: 0.7533375, g: 0.7730951, b: 0.9339623, a: 1}
   hueShift:
     overrideState: 0
     value: 0
@@ -211,8 +211,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   postExposure:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.28
   contrast:
     overrideState: 0
     value: 0
