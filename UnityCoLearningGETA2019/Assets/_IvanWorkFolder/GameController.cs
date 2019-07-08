@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     private List<MovableElement> allMovables;
     internal int completedGoals = 0;
     public int allGoals = 3;
-    private Vector2[] goalPositions = new Vector2[] { new Vector2(-1f, -3.5f), new Vector2(0f, -3.5f), new Vector2(1f, -3.5f) };
+    private Vector3[] goalPositions = new Vector3[] { new Vector3(-0f, -4f,1), new Vector3(-1f, -4f, 1f), new Vector3(2f, -4f, 1) };
     private void Start()
     {
         allSandpiles = FindObjectsOfType<Sandpile>();
