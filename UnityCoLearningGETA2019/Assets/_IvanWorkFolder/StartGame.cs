@@ -16,7 +16,7 @@ public class StartGame : MonoBehaviour
         if (!startingLevel)
         {
             var color = buttonImage.color;
-            color.a = 0.25f * (1.5f - Mathf.Cos(Time.time * pulseSpeed));
+            color.a = 0.5f * (1f - Mathf.Cos(Time.time * pulseSpeed));
             buttonImage.color = color;
         }
     }

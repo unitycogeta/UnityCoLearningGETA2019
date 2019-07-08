@@ -151,6 +151,16 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1646782383018626072, guid: 9bc48fe47d688dc4491a80928f1e6f4f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646782383018626072, guid: 9bc48fe47d688dc4491a80928f1e6f4f,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1646782383368176064, guid: 9bc48fe47d688dc4491a80928f1e6f4f,
         type: 3}
       propertyPath: m_LocalScale.y
