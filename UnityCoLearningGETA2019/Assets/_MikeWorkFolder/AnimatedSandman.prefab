@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 331891765748103943}
   - component: {fileID: 9040263899587053737}
   - component: {fileID: 196439330}
+  - component: {fileID: 4786062980412297723}
   m_Layer: 12
   m_Name: AnimatedSandman
   m_TagString: Untagged
@@ -114,6 +115,7 @@ MonoBehaviour:
   ejectedSandPrefab: {fileID: 6576458500419287277, guid: 6857208f38b13704ab30e42d9181571c,
     type: 3}
   playerModel: {fileID: 8808295364075029756}
+  anim: {fileID: 0}
   rotationPerSecond: 360
   horizontalMaxSpeed: 3
   upMaxSpeed: 5
@@ -145,6 +147,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.125}
   m_Size: {x: 0.125, y: 0.25}
   m_Direction: 0
+--- !u!114 &4786062980412297723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040263899587053738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fcb3c6064e272741a2981c47fc9c6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: {fileID: 102900000, guid: f25c65e7749dc684aae266fad4ceb6ac, type: 3}
+  sceneString: StartMenuScene
 --- !u!1 &9040263901304895436
 GameObject:
   m_ObjectHideFlags: 0

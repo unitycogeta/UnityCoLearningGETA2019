@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     public GameObject FixedSandPrefab;
     public Vector3[] fixedSandPositions;
 
+    public AudioSource audioSource;
+
     private void Start()
     {
         allSandpiles = FindObjectsOfType<Sandpile>();
@@ -70,6 +72,11 @@ public class GameController : MonoBehaviour
 
     public void CompleteGoal(MovableElement element)
     {
+        if (audioSource != null)
+        {
+            Debug.Log("Play audio");
+            audioSource.Play();
+        }
         element.transform.position = goalPositions[completedGoals];
         element.transform.rotation = Quaternion.identity;
         element.GetComponent<Rigidbody2D>().Sleep();
@@ -80,12 +87,13 @@ public class GameController : MonoBehaviour
         if(completedGoals == allGoals)
         {
 
-            FinishGame();
+            StartCoroutine(FinishGame());
         }
     }
 
-    private void FinishGame()
+    IEnumerator FinishGame()
     {
+        yield return new WaitForSeconds(3);
         sceneLoader.LoadSCene();
 
     }

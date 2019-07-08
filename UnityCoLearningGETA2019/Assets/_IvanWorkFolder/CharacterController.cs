@@ -10,6 +10,7 @@ public class CharacterController : MonoBehaviour
     Vector2 force = Vector2.zero;
 
     private float deadzone = 0.1f;
+    private SceneLoader sceneLoader;
 
     private bool isOnGround;
 
@@ -53,13 +54,18 @@ public class CharacterController : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
 
         anim = gameObject.GetComponentInChildren<Animator>();
-
+        sceneLoader = GetComponent<SceneLoader>();
         //animationScript = GetComponent<AnimationScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            sceneLoader.LoadSCene();
+        }
+
         //Check if the bottom of the figure overlaps with the ground
         if (Input.GetButtonDown("CheckpointReset") && checkpoint != null)
         {
