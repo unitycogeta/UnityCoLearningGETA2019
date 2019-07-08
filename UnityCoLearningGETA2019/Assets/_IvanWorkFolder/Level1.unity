@@ -6837,7 +6837,7 @@ PrefabInstance:
     - target: {fileID: 7575034901633789514, guid: 80b3929c1c9d14941bebc15291cd83c7,
         type: 3}
       propertyPath: allGoals
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8088122481716716929, guid: 80b3929c1c9d14941bebc15291cd83c7,
         type: 3}
