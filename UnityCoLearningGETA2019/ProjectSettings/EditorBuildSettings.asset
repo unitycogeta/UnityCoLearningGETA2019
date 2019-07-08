@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_IvanWorkFolder/StartMenuScene.unity
+    guid: f25c65e7749dc684aae266fad4ceb6ac
+  - enabled: 1
     path: Assets/_MikeWorkFolder/IntroScene.unity
     guid: 748a3647579ebb747a76bd38e1ac5333
   - enabled: 1
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_FerdiWorkFolder/Level1/Scenes/Scene1.unity
     guid: eee62fc630286704c808068f0905f515
-  - enabled: 1
-    path: Assets/_IvanWorkFolder/StartMenuScene.unity
-    guid: f25c65e7749dc684aae266fad4ceb6ac
   - enabled: 1
     path: Assets/_IvanWorkFolder/OutroScene.unity
     guid: 4ada47f86577544448a88948b54ededd
