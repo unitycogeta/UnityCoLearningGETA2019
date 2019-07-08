@@ -15,6 +15,9 @@ public class CharacterController : MonoBehaviour
 
     public GameController gameController;
     public GameObject ejectedSandPrefab;
+    public Transform playerModel;
+    public float rotationPerSecond = 360;
+
     internal Sandpile checkpoint;
     internal bool inRangeOfSandpile;
 
@@ -71,7 +74,7 @@ public class CharacterController : MonoBehaviour
         var horizontalInput = Input.GetAxis("Horizontal");
 
 
-
+        float desiredModelRotation;
         //Use a deadzone for controllers
         if (Mathf.Abs(horizontalInput) > deadzone)
         {
@@ -80,14 +83,21 @@ public class CharacterController : MonoBehaviour
                 (horizontalInput + deadzone) / (1f - deadzone);
 
             force.x =  horizontalInput * (isOnGround ? horizontalGroundForce : horizontalAirForce);
+            desiredModelRotation = horizontalInput > 0 ? 90 : 270;
             animationScript.PlayAnimation("Moving");
             //animationScript.PlayAnimation(2);
         }
         else
         {
             animationScript.PlayAnimation("Idle");
+            desiredModelRotation = rb.velocity.x > 0.1f ? 90 :
+                                        rb.velocity.x < -0.1f ? 270 : 180;
+                
         }
 
+
+        float currentAngle = playerModel.transform.localEulerAngles.y;
+        playerModel.transform.localEulerAngles = new Vector3(0, Mathf.MoveTowardsAngle(currentAngle, desiredModelRotation, rotationPerSecond * Time.deltaTime),0);
 
 
 
