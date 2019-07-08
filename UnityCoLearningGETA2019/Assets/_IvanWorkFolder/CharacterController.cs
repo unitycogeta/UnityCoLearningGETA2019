@@ -15,6 +15,9 @@ public class CharacterController : MonoBehaviour
 
     public GameController gameController;
     public GameObject ejectedSandPrefab;
+    public Transform playerModel;
+    public float rotationPerSecond = 360;
+
     internal Sandpile checkpoint;
     internal bool inRangeOfSandpile;
 
@@ -39,13 +42,15 @@ public class CharacterController : MonoBehaviour
     public float sizeScaleChange = 0.5f;
     //public float heightChange;
 
+    private AnimationScript animationScript;
+
     // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
 
-
+        animationScript = GetComponent<AnimationScript>();
     }
 
     // Update is called once per frame
@@ -69,7 +74,7 @@ public class CharacterController : MonoBehaviour
         var horizontalInput = Input.GetAxis("Horizontal");
 
 
-
+        float desiredModelRotation;
         //Use a deadzone for controllers
         if (Mathf.Abs(horizontalInput) > deadzone)
         {
@@ -78,9 +83,22 @@ public class CharacterController : MonoBehaviour
                 (horizontalInput + deadzone) / (1f - deadzone);
 
             force.x =  horizontalInput * (isOnGround ? horizontalGroundForce : horizontalAirForce);
+            desiredModelRotation = horizontalInput > 0 ? 90 : 270;
+            animationScript.PlayAnimation("Moving");
+            //animationScript.PlayAnimation(2);
+        }
+        else
+        {
+            animationScript.PlayAnimation("Idle");
+            desiredModelRotation = rb.velocity.x > 0.1f ? 90 :
+                                        rb.velocity.x < -0.1f ? 270 : 180;
+                
         }
 
-        
+
+        float currentAngle = playerModel.transform.localEulerAngles.y;
+        playerModel.transform.localEulerAngles = new Vector3(0, Mathf.MoveTowardsAngle(currentAngle, desiredModelRotation, rotationPerSecond * Time.deltaTime),0);
+
 
 
         if (Input.GetButtonDown("Jump"))
@@ -88,6 +106,7 @@ public class CharacterController : MonoBehaviour
             if (!doJump && (isOnGround || ChangeSize(-1))) {
                 impulse.y = jumpImpulse;
                 doJump = true;
+                animationScript.PlayAnimation("Jumping");
             }
         }
 
@@ -111,6 +130,7 @@ public class CharacterController : MonoBehaviour
                     ejectedSand.Absorb();
                 }
             }
+            animationScript.PlayAnimation("Growing");
 
         }
 
