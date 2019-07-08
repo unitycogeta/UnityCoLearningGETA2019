@@ -16,6 +16,8 @@ public class CharacterController : MonoBehaviour
     public GameController gameController;
     public GameObject ejectedSandPrefab;
     public Transform playerModel;
+    public Animator anim;
+
     public float rotationPerSecond = 360;
 
     internal Sandpile checkpoint;
@@ -42,7 +44,7 @@ public class CharacterController : MonoBehaviour
     public float sizeScaleChange = 0.5f;
     //public float heightChange;
 
-    private AnimationScript animationScript;
+    //private AnimationScript animationScript;
 
     // Start is called before the first frame update
     void Awake()
@@ -50,7 +52,9 @@ public class CharacterController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
 
-        animationScript = GetComponent<AnimationScript>();
+        anim = gameObject.GetComponentInChildren<Animator>();
+
+        //animationScript = GetComponent<AnimationScript>();
     }
 
     // Update is called once per frame
@@ -84,12 +88,16 @@ public class CharacterController : MonoBehaviour
 
             force.x =  horizontalInput * (isOnGround ? horizontalGroundForce : horizontalAirForce);
             desiredModelRotation = horizontalInput > 0 ? 90 : 270;
-            animationScript.PlayAnimation("Moving");
+            anim.SetInteger("AnimParameter", 1);
+
+            //animationScript.PlayAnimation("Moving");
             //animationScript.PlayAnimation(2);
         }
         else
         {
-            animationScript.PlayAnimation("Idle");
+            anim.SetInteger("AnimParameter", 0);
+
+            //animationScript.PlayAnimation("Idle");
             desiredModelRotation = rb.velocity.x > 0.1f ? 90 :
                                         rb.velocity.x < -0.1f ? 270 : 180;
                 
@@ -106,7 +114,8 @@ public class CharacterController : MonoBehaviour
             if (!doJump && (isOnGround || ChangeSize(-1))) {
                 impulse.y = jumpImpulse;
                 doJump = true;
-                animationScript.PlayAnimation("Jumping");
+                anim.SetInteger("AnimParameter", 2);
+                //animationScript.PlayAnimation("Jumping");
             }
         }
 
@@ -130,7 +139,9 @@ public class CharacterController : MonoBehaviour
                     ejectedSand.Absorb();
                 }
             }
-            animationScript.PlayAnimation("Growing");
+            anim.SetInteger("AnimParameter", 3);
+
+            //animationScript.PlayAnimation("Growing");
 
         }
 
