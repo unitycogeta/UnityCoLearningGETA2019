@@ -13,11 +13,14 @@ public class GameController : MonoBehaviour
     internal int completedGoals = 0;
     public int allGoals = 3;
     private Vector3[] goalPositions = new Vector3[] { new Vector3(-0f, -4f,1), new Vector3(-1f, -4f, 1f), new Vector3(2f, -4f, 1) };
+    private SceneLoader sceneLoader;
+
     private void Start()
     {
         allSandpiles = FindObjectsOfType<Sandpile>();
         allMovables = FindObjectsOfType<MovableElement>().ToList();
         allEjectedSand = new List<EjectedSand>();
+        sceneLoader = GetComponent<SceneLoader>();
     }
 
     private void Update()
@@ -71,7 +74,14 @@ public class GameController : MonoBehaviour
         completedGoals++;
         if(completedGoals == allGoals)
         {
-            Debug.Log("You won");
+
+            FinishGame();
         }
+    }
+
+    private void FinishGame()
+    {
+        sceneLoader.LoadSCene();
+
     }
 }
