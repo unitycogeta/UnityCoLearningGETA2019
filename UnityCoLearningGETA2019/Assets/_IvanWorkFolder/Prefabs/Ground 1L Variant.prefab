@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4461947132091651662, guid: 8c7fcd5fe63112e4295eb4f2faaed4e1,
         type: 3}
       propertyPath: m_Name
-      value: Ground 1L
+      value: Ground 1L Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4461947132091651660, guid: 8c7fcd5fe63112e4295eb4f2faaed4e1,
         type: 3}
@@ -77,5 +77,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8527127250277221777, guid: 8c7fcd5fe63112e4295eb4f2faaed4e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8527127250277221777, guid: 8c7fcd5fe63112e4295eb4f2faaed4e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986838477250119582, guid: 8c7fcd5fe63112e4295eb4f2faaed4e1,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5608648403358195007, guid: 6bfae87aa5dc844429826314e344e443,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c7fcd5fe63112e4295eb4f2faaed4e1, type: 3}
