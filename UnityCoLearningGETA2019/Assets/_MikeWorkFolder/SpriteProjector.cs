@@ -7,6 +7,8 @@ public class SpriteProjector : MonoBehaviour
 
     [SerializeField]
     private float switchTime;
+    [SerializeField]
+    private float steadyTime;
 
     [SerializeField]
     private int nextSpriteIndex;
@@ -82,9 +84,11 @@ public class SpriteProjector : MonoBehaviour
     private IEnumerator FadeOut()
     {
         Color tempColor = spriteRenderer1.color;
+        float alpha = 1+steadyTime / switchTime;
         while (tempColor.a > 0)
         {
-            tempColor.a -= Time.deltaTime / switchTime;
+            alpha -= Time.deltaTime / switchTime;
+            tempColor.a = Mathf.Min(alpha,1);
             spriteRenderer1.color = tempColor;
 
             yield return null;
@@ -95,6 +99,7 @@ public class SpriteProjector : MonoBehaviour
 
     private void Next()
     {
+        Debug.Log("Next: " + Time.time);
         spriteRenderer1.sprite = spriteRenderer2.sprite;
         spriteRenderer1.color = Color.white;
         nextSpriteIndex++;
