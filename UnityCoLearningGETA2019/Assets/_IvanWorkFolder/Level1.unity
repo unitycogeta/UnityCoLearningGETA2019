@@ -5809,6 +5809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OneWayGround (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8877849041248539866, guid: 05a8670eb481d3141b448a6f2657969d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8877849041248539864, guid: 05a8670eb481d3141b448a6f2657969d,
         type: 3}
       propertyPath: m_LocalPosition.x
