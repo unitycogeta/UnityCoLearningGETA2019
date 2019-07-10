@@ -32,7 +32,7 @@ public class StartGame : MonoBehaviour
         while(buttonImage.color.a > 0)
         {
             var color = buttonImage.color;
-            color.a -= Time.deltaTime * pulseSpeed / 6f;
+            color.a -= Time.deltaTime * pulseSpeed / 3f;
             buttonImage.color = color;
             yield return null;
         }
